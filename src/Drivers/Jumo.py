@@ -9,7 +9,7 @@ class JumoQuantrol(AbstractController):
     controller_type = UnitType.TEMPERATURE
     features = {ControllerFeatures.SIMPLE_PID}
 
-    def __init__(self, _port_name: str, _slave_address: int) -> None:
+    def __init__(self, _port_name: str, _slave_address: int=1) -> None:
         self.instrument = minimalmodbus.Instrument(_port_name, _slave_address)
         self.instrument.serial.baudrate = 9600
         self.instrument.serial.timeout = 0.25

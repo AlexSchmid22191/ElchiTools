@@ -9,7 +9,7 @@ class OmegaPt(AbstractController):
     controller_type = UnitType.TEMPERATURE
     features = {ControllerFeatures.SIMPLE_PID}
 
-    def __init__(self, _port_name: str, _slave_address: int):
+    def __init__(self, _port_name: str, _slave_address: int=1):
         self.instrument = minimalmodbus.Instrument(_port_name, _slave_address)
 
         self.com_lock = threading.Lock()
