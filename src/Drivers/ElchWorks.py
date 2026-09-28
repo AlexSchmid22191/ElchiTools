@@ -56,7 +56,7 @@ class ElchiTherm(AbstractController):
     tc_ids = {'B': 0, 'E': 1, 'J': 2, 'K': 3, 'N': 4, 'R': 5, 'S': 6, 'T': 7}
     tc_types = {value: key for key, value in tc_ids.items()}
 
-    def __init__(self, _port_name: str, _slave_address: int, baudrate=9600):
+    def __init__(self, _port_name: str, _slave_address: int=1, baudrate=9600):
         self.instrument = minimalmodbus.Instrument(port=_port_name, slaveaddress=_slave_address)
         self.instrument.serial.baudrate = baudrate
         time.sleep(2)
